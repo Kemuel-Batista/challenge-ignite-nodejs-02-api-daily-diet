@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import { z } from 'zod'
-import { knex } from '../database'
+import { knexdb } from '../database'
 
 export async function AuthRoutes(app: FastifyInstance) {
   app.post('/', async (request, reply) => {
@@ -11,7 +11,7 @@ export async function AuthRoutes(app: FastifyInstance) {
 
     const { email, password } = createAuthBodySchema.parse(request.body)
 
-    const user = await knex('users')
+    const user = await knexdb('users')
       .where({
         email,
         password,

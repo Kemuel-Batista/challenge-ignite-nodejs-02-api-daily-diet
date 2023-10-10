@@ -1,4 +1,4 @@
-import { knex as SchemaDB, Knex } from 'knex'
+import knex, { Knex } from 'knex'
 import { env } from './env'
 
 export const config: Knex.Config = {
@@ -16,4 +16,4 @@ export const config: Knex.Config = {
   },
 }
 
-export const knex = SchemaDB(config)
+export const knexdb = knex(config)

@@ -1,6 +1,7 @@
 {
   "name": "ignite-challenge-nodejs02-api-daily-diet",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fastify/cookie": "^9.1.0",
     "@fastify/jwt": "^7.2.1",
     "dotenv": "^16.3.1",
     "fastify": "^4.23.2",
@@ -27,11 +27,11 @@
     "@types/node": "^20.7.1",
     "@types/supertest": "^2.0.14",
     "eslint": "^8.50.0",
-    "sqlite3": "^5.1.6",
     "supertest": "^6.3.3",
     "tsup": "^7.2.0",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.6"
+    "vitest": "^0.34.6",
+    "sqlite3": "^5.1.6"
   }
 }

@@ -14,10 +14,12 @@ declare module 'knex/types/tables' {
       id: string
       name: string
       description: string
-      date: Date
-      time: Date
+      date: string
+      time: string
       is_on_diet: boolean
-      user_id: string
+      user_id: string | object | Buffer
+      updated_at: Date | null
+      deleted_at: Date | null
     }
   }
 }

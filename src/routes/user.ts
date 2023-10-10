@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify'
-import { knex } from '../database'
+import { knexdb } from '../database'
 import { z } from 'zod'
 import { randomUUID } from 'crypto'
 
@@ -26,7 +26,7 @@ export async function UserRoutes(app: FastifyInstance) {
       request.body,
     )
 
-    await knex('users').insert({
+    await knexdb('users').insert({
       id: randomUUID(),
       name,
       lastname,
@@ -38,7 +38,7 @@ export async function UserRoutes(app: FastifyInstance) {
   })
 
   app.get('/', async () => {
-    const users = await knex('users').select('*')
+    const users = await knexdb('users').select('*')
 
     return {
       users,
